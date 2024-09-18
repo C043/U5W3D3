@@ -9,8 +9,6 @@ import lombok.Setter;
 public abstract class Ufficiale {
     protected Ufficiale responsabile;
     protected int stipendio;
-    public Ufficiale(){
-    }
     public abstract void checkStipendio(int num);
     public void next(int num){
         if(this.responsabile != null) this.responsabile.checkStipendio(num);

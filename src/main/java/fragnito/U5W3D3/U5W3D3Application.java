@@ -54,7 +54,7 @@ public class U5W3D3Application {
 		maggiore.setResponsabile(colonnello);
 		colonnello.setResponsabile(generale);
 
-		tenente.checkStipendio(5000);
+		tenente.checkStipendio(1500);
 	}
 	public static List<Pagina> randomPages(int num){
 		Faker faker = new Faker();
