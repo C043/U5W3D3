@@ -8,6 +8,7 @@ import fragnito.U5W3D3.Composite.Autore;
 import fragnito.U5W3D3.Composite.Libro;
 import fragnito.U5W3D3.Composite.Pagina;
 import fragnito.U5W3D3.Composite.Sezione;
+import fragnito.U5W3D3.chainofresponsibility.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -41,6 +42,19 @@ public class U5W3D3Application {
 		System.out.println(introduzione.getText());
 		System.out.println("---------------");
 		System.out.println(primiCapitoli.getText());
+
+		Tenente tenente = new Tenente();
+		Capitano capitano = new Capitano();
+		Maggiore maggiore = new Maggiore();
+		Colonnello colonnello = new Colonnello();
+		Generale generale = new Generale();
+
+		tenente.setResponsabile(capitano);
+		capitano.setResponsabile(maggiore);
+		maggiore.setResponsabile(colonnello);
+		colonnello.setResponsabile(generale);
+
+		tenente.checkStipendio(5000);
 	}
 	public static List<Pagina> randomPages(int num){
 		Faker faker = new Faker();
